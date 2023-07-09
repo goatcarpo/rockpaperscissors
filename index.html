@@ -10,12 +10,11 @@
     const rock = "rock";
     const paper = "paper";
     const scissors = "scissors";
-    let randomChoice = Math.random()*10;
-    console.log(randomChoice);
-    if (randomChoice <= 3) {
+    let randomChoice = Math.floor(Math.random()*3);
+    if (randomChoice === 0) {
         return "rock";
         }
-    else if (randomChoice <= 6) {
+    else if (randomChoice === 1) {
         return "paper";
         }
     else  {
@@ -24,9 +23,11 @@
     } 
      
     let computerSelection = getComputerChoice();
-    console.log(computerSelection);
+    let userInput = prompt("Enter your choice");
+    let playerSelection = userInput.toLowerCase();
+    
+    
     function playGame (playerSelection, computerSelection) {
-    playerSelection.toLowerCase();
     let result;
     if (playerSelection === "rock" && computerSelection === "rock") {
         result="It's a tie!";
@@ -49,7 +50,7 @@
      return result;
 }
 
-console.log(playGame("rock",computerSelection));
+console.log(playGame(playerSelection,computerSelection));
     </script>
 </body>
 </html>
