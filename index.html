@@ -22,25 +22,34 @@
         return "scissors";
         }
     } 
-    
-    console.log(getComputerChoice());  
+     
     let computerSelection = getComputerChoice();
-    
-    function getUserInput () {
-        const userChoice = prompt("Enter your choice");
-        const userInput = userChoice.toLowerCase();
-        return userInput;
-    }
-    
-    console.log(getUserInput());
-   
+    console.log(computerSelection);
     function playGame (playerSelection, computerSelection) {
-        const playerSelection = userInput;
-        
-    }
-    
-    
-    
+    playerSelection.toLowerCase();
+    let result;
+    if (playerSelection === "rock" && computerSelection === "rock") {
+        result="It's a tie!";
+    } else if(playerSelection === "rock" && computerSelection === "paper") {
+        result="You lose! Paper beats rock.";
+    } else if(playerSelection === "rock" && computerSelection === "scissors") {
+        result="You win! Rock beats scissors.";
+    } else if(playerSelection === "paper" && computerSelection === "rock") {
+        result="You win! Papers beats rock.";
+    } else if(playerSelection === "paper" && computerSelection === "paper") {
+        result="It's a tie!";
+    } else if(playerSelection === "paper" && computerSelection === "scissors") {
+        result="You lose! Scissors beat paper.";
+    } else if(playerSelection === "scissors" && computerSelection === "rock") {
+        result="You lose! Rock beats scissors.";
+    } else if(playerSelection === "scissors" && computerSelection === "paper") {
+        result="You win! Scissors beat paper.";
+    } else  
+        result="It's a tie!";
+     return result;
+}
+
+console.log(playGame("rock",computerSelection));
     </script>
 </body>
 </html>
