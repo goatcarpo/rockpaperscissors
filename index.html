@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rockpaperscissors</title>
+</head>
+<body>
+    <script>
+    function getComputerChoice () {
+    const rock = "rock";
+    const paper = "paper";
+    const scissors = "scissors";
+    let randomChoice = Math.random()*10;
+    console.log(randomChoice);
+    if (randomChoice <= 3) {
+        return "rock";
+        }
+    else if (randomChoice <= 6) {
+        return "paper";
+        }
+    else  {
+        return "scissors";
+        }
+    } 
+    
+    console.log(getComputerChoice());  
+    let computerSelection = getComputerChoice();
+    
+    function getUserInput () {
+        const userChoice = prompt("Enter your choice");
+        const userInput = userChoice.toLowerCase();
+        return userInput;
+    }
+    
+    console.log(getUserInput());
+   
+    function playGame (playerSelection, computerSelection) {
+        const playerSelection = userInput;
+        
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
