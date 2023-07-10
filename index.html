@@ -27,30 +27,48 @@
     let playerSelection = userInput.toLowerCase();
     
     
-    function playGame (playerSelection, computerSelection) {
-    let result;
-    if (playerSelection === "rock" && computerSelection === "rock") {
-        result="It's a tie!";
+    function playRound (playerSelection, computerSelection) {
+    if (playerSelection ===  computerSelection) {
+        return "It's a tie!";
     } else if(playerSelection === "rock" && computerSelection === "paper") {
-        result="You lose! Paper beats rock.";
+        return "You lose! Paper beats rock.";
     } else if(playerSelection === "rock" && computerSelection === "scissors") {
-        result="You win! Rock beats scissors.";
+        return "You win! Rock beats scissors.";
     } else if(playerSelection === "paper" && computerSelection === "rock") {
-        result="You win! Papers beats rock.";
-    } else if(playerSelection === "paper" && computerSelection === "paper") {
-        result="It's a tie!";
+        return "You win! Papers beats rock.";
     } else if(playerSelection === "paper" && computerSelection === "scissors") {
-        result="You lose! Scissors beat paper.";
+        return "You lose! Scissors beat paper.";
     } else if(playerSelection === "scissors" && computerSelection === "rock") {
-        result="You lose! Rock beats scissors.";
-    } else if(playerSelection === "scissors" && computerSelection === "paper") {
-        result="You win! Scissors beat paper.";
-    } else  
-        result="It's a tie!";
-     return result;
+        return "You lose! Rock beats scissors.";
+    } else return "You win! Scissors beat paper.";
 }
+console.log(playRound(playerSelection, computerSelection));
 
-console.log(playGame(playerSelection,computerSelection));
-    </script>
+function playGame () { 
+    let score = 0;
+    
+    for (let turn=1; turn <= 5; turn++) {
+    let computerSelection = getComputerChoice();
+    let userInput = prompt("Enter your choice");
+    let playerSelection = userInput.toLowerCase();
+    
+    let result = playRound(playerSelection, computerSelection);
+
+        console.log("Round ", turn)
+        console.log(result);
+    
+        if (result === "You win! Rock beats scissors." || result === "You win! Papers beats rock." || result === "You win! Scissors beat paper.") {
+          score++;
+        } else if (result==="You lose! Paper beats rock." || result==="You lose! Scissors beat paper." || result === "You lose! Rock beats scissors.") {
+            score--;
+        }
+        console.log("Current Score:", score);
+        console.log("------------------------");
+     }
+     console.log("Final Score:", score);
+    }
+console.log(playGame());
+
+</script>
 </body>
 </html>
