@@ -21,13 +21,11 @@
         return "scissors";
         }
     } 
-     
+   
     let computerSelection = getComputerChoice();
-    let userInput = prompt("Enter your choice");
-    let playerSelection = userInput.toLowerCase();
+    let playerSelection = prompt("Enter your choice").toLowerCase;
     
-    
-    function playRound (playerSelection, computerSelection) {
+    function playRound (playerSelection, computerSelection) {   
     if (playerSelection ===  computerSelection) {
         return "It's a tie!";
     } else if(playerSelection === "rock" && computerSelection === "paper") {
@@ -42,7 +40,8 @@
         return "You lose! Rock beats scissors.";
     } else return "You win! Scissors beat paper.";
 }
-console.log(playRound(playerSelection, computerSelection));
+
+
 
 function playGame () { 
     let score = 0;
@@ -63,11 +62,20 @@ function playGame () {
             score--;
         }
         console.log("Current Score:", score);
-        console.log("------------------------");
+        }
+     
+     function getFinalScore () {
+        if (score >= 3)
+         return "You won the game, congratulations!";
+        else 
+        return "You lost! Try again :)";
      }
-     console.log("Final Score:", score);
+        
+        console.log(getFinalScore());
     }
-console.log(playGame());
+
+
+    console.log(playGame());
 
 </script>
 </body>
