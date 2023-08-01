@@ -34,8 +34,8 @@ function playRound (playerSelection, computerSelection) {
         resultDisplay.textContent = result;
 
         updateScore(result);
-        const playerScoreDisplay = document.getElementById('player-score');
-        const computerScoreDisplay = document.getElementById('computer-score');
+        const playerScoreDisplay = document.getElementById('playerScore');
+        const computerScoreDisplay = document.getElementById('computerScore');
         playerScoreDisplay.textContent = playerScore;
         computerScoreDisplay.textContent = computerScore;
         if (playerScore === 5 || computerScore === 5) {
