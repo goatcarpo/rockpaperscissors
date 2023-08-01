@@ -5,78 +5,14 @@
     <title>rockpaperscissors</title>
 </head>
 <body>
-    <script>
-    function getComputerChoice () {
-    const rock = "rock";
-    const paper = "paper";
-    const scissors = "scissors";
-    let randomChoice = Math.floor(Math.random()*3);
-    if (randomChoice === 0) {
-        return "rock";
-        }
-    else if (randomChoice === 1) {
-        return "paper";
-        }
-    else  {
-        return "scissors";
-        }
-    } 
-   
-    let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Enter your choice").toLowerCase;
-    
-    function playRound (playerSelection, computerSelection) {   
-    if (playerSelection ===  computerSelection) {
-        return "It's a tie!";
-    } else if(playerSelection === "rock" && computerSelection === "paper") {
-        return "You lose! Paper beats rock.";
-    } else if(playerSelection === "rock" && computerSelection === "scissors") {
-        return "You win! Rock beats scissors.";
-    } else if(playerSelection === "paper" && computerSelection === "rock") {
-        return "You win! Papers beats rock.";
-    } else if(playerSelection === "paper" && computerSelection === "scissors") {
-        return "You lose! Scissors beat paper.";
-    } else if(playerSelection === "scissors" && computerSelection === "rock") {
-        return "You lose! Rock beats scissors.";
-    } else return "You win! Scissors beat paper.";
-}
+ <div id="result-display"></div>
+ <div id="player-score">0</div>
+ <div id="computer-score">0</div>
+    <button id="rock">ROCK</button>
+    <button id="paper">PAPER</paper>
+    <button id="scissors">SCISSORS</button>
 
 
-
-function playGame () { 
-    let score = 0;
-    
-    for (let turn=1; turn <= 5; turn++) {
-    let computerSelection = getComputerChoice();
-    let userInput = prompt("Enter your choice");
-    let playerSelection = userInput.toLowerCase();
-    
-    let result = playRound(playerSelection, computerSelection);
-
-        console.log("Round ", turn)
-        console.log(result);
-    
-        if (result === "You win! Rock beats scissors." || result === "You win! Papers beats rock." || result === "You win! Scissors beat paper.") {
-          score++;
-        } else if (result==="You lose! Paper beats rock." || result==="You lose! Scissors beat paper." || result === "You lose! Rock beats scissors.") {
-            score--;
-        }
-        console.log("Current Score:", score);
-        }
-     
-     function getFinalScore () {
-        if (score >= 3)
-         return "You won the game, congratulations!";
-        else 
-        return "You lost! Try again :)";
-     }
-        
-        console.log(getFinalScore());
-    }
-
-
-    console.log(playGame());
-
-</script>
+    <script src="js-file.js" defer></script>
 </body>
 </html>
